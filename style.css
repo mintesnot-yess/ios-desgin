@@ -1,0 +1,247 @@
+* {
+    padding: 0;
+    margin: 0;
+    transition: all .3s;
+}
+
+.container {
+    font-family: sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background: #72848b;
+
+}
+
+.phone-container {
+    width: 350px;
+    height: 700px;
+    background: #3a3a3a;
+    border: solid 5px #2e2e2e;
+    border-radius: 50px;
+    box-shadow: inset 5px 0 10px #a8a8a8, -10px 0 10px #000;
+    position: relative;
+
+}
+
+.phone-container::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    top: 0;
+    left: 50%;
+    background: #000;
+    transform: translate(-50%);
+    border-radius: 0 0 20px 20px;
+}
+
+.screen-content {
+    scroll-snap-type: y mandatory;
+    width: 335px;
+    height: 685px;
+    background: url("/img/computer-desktop-wallpaper_092810358_20.jpg");
+    border: solid 7px #000000dc;
+    border-radius: 50px;
+    overflow: auto;
+}
+
+.screen-content::-webkit-scrollbar {
+    display: none;
+}
+
+.status-bar {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+
+    ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+
+        li {
+            list-style: none;
+            margin: 8px 35px;
+            font-size: 15px;
+        }
+    }
+}
+
+section {
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
+}
+
+.screen-lock {
+    animation: page-animation linear;
+    animation-timeline: scroll();
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+
+    gap: 100px;
+    background: url("img/computer-desktop-wallpaper_092810358_20.jpg");
+
+    .clock {
+        margin: 10px 0;
+        flex: 8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+
+        span {
+            font-size: 20px;
+            color: #fff;
+
+        }
+
+
+    }
+
+    .clock span:first-child {
+        font-size: 5rem;
+    }
+
+    .bottom {
+        flex: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 20px;
+
+        button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: #0000008a;
+            font-size: 20px;
+            color: #fff;
+            margin: 20px 10px;
+            cursor: pointer;
+
+
+        }
+    }
+
+}
+
+.screen-open {
+    animation: page-animation linear reverse;
+    animation-timeline: scroll();
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#00000044, #00000044), url('img/computer-desktop-wallpaper_092810358_20.jpg');
+    background-size: cover;
+
+}
+
+.app-content {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 60px auto;
+
+    .body-app {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+
+        button {
+            flex: 1 60px;
+            height: 60px;
+            background: transparent;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: 100%;
+                background: #ffffffb7;
+                border-radius: 15px;
+
+            }
+
+            span {
+                color: #fff;
+
+
+            }
+        }
+
+    }
+
+
+
+
+}
+
+.bottom-app {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    display: flex;
+    background: #00000038;
+    flex-direction: row;
+    gap: 10px;
+    padding: 5px;
+
+    button {
+        flex: 1 50px;
+        height: 55px;
+        background: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            background: #ffffffb7;
+            border-radius: 15px;
+
+        }
+
+
+    }
+}
+
+
+button {
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+@keyframes page-animation {
+
+
+    to {
+        filter: blur(10px);
+        opacity: 0;
+        scale: 1.5;
+    }
+
+}

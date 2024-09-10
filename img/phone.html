@@ -1,0 +1,381 @@
+<style>
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
+
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        background: #597283;
+        display: grid;
+        place-content: center;
+
+    }
+
+    .phone-container {
+        width: 350px;
+        height: 700px;
+        background: #3a3a3a;
+        border: solid 5px #2e2e2e;
+        border-radius: 50px;
+        position: relative;
+
+        box-shadow: inset 5px 0 10px #a8a8a8, -10px 0px 10px #000000;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+
+    }
+
+    .phone-container::after {
+        content: '';
+        position: absolute;
+        width: 150px;
+        height: 30px;
+        background: #0c0c0c;
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%);
+        border-radius: 0 0 20px 20px;
+        box-shadow: inset -8px -4px 3px rgb(0, 0, 0);
+
+
+    }
+
+
+    .screen-content {
+        scroll-snap-type: y mandatory;
+        width: 335px;
+        height: 685px;
+        border-radius: 50px;
+        border: solid 7px #000;
+        background: url('img/computer-desktop-wallpaper_092810358_20.jpg');
+        overflow: auto;
+    }
+
+    .screen-content::-webkit-scrollbar {
+        display: none;
+    }
+
+
+
+
+    section {
+        scroll-snap-align: start;
+        scroll-behavior: smooth;
+        width: 100%;
+        height: 100%;
+
+        margin: auto;
+
+    }
+
+    .screen-luck {
+        transition: all .3s;
+        display: flex;
+        background: url('img/computer-desktop-wallpaper_092810358_20.jpg');
+        flex-direction: column;
+        gap: 100px;
+        animation: screen-transition;
+        animation-timeline: scroll();
+
+
+        .time {
+            flex: 6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            span {
+                font-size: 20px;
+                color: #fff;
+            }
+        }
+
+        .time span:first-child {
+            font-size: 5rem;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: -5px;
+            color: #fff;
+        }
+
+        .bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            flex: 3;
+            gap: 20px;
+
+            button {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #0000008a;
+                color: #fff;
+                font-size: 20px;
+                margin: 20px 10px;
+                border: none;
+                cursor: pointer;
+
+            }
+        }
+    }
+
+    .screen-open {
+        display: flex;
+        flex-direction: column;
+        background: url('/assets/image/computer-desktop-wallpaper_092810358_20.jpg');
+        background-size: cover;
+
+        animation: screen-transition reverse;
+        animation-timeline: scroll();
+    }
+
+    .app-container {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 60px auto;
+
+        .main-app {
+
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+
+            .scroll-app {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                button {
+
+                    flex: 1 60px;
+                    height: 60px;
+                    background: transparent;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+
+                    i {
+                        font-size: 2rem;
+
+                    }
+
+                    span {
+                        color: rgb(255, 233, 233);
+                    }
+
+
+                }
+
+
+
+            }
+
+        }
+
+
+
+
+
+
+
+        .bottom-app {
+            display: flex;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            justify-content: space-between;
+            width: 80%;
+            background: #00000044;
+            border-radius: 10px;
+            padding: 5px;
+
+
+
+
+            button {
+
+                background: transparent;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: none;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+
+                }
+
+
+
+
+            }
+
+
+        }
+
+        .app {
+            cursor: pointer;
+
+            span {
+                border-radius: 5px;
+
+            }
+
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                background: #ffffffcb;
+            }
+
+
+        }
+
+    }
+
+    nav {
+        width: 100%;
+
+
+        height: 50px;
+        position: absolute;
+        z-index: 1;
+
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+
+            li {
+                list-style: none;
+                margin: 8px 35px;
+                font-size: 15px;
+
+
+            }
+        }
+    }
+
+    @keyframes screen-transition {
+        to {
+            filter: blur(10px);
+            opacity: 0;
+            scale: 1.2;
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="phone-container">
+        <div class="phone-screen">
+            <div class="screen-content">
+                <nav>
+                    <ul>
+                        <li>9:41</li>
+                        <li>
+
+                            <i class="fa-solid fa-signal"></i>
+                            <span> 5G </span>
+                            <i class="fa-solid fa-battery-full"></i>
+                        </li>
+                    </ul>
+                </nav>
+                <section class="screen-luck">
+                    <div class="time">
+                        <span> 9:41 </span>
+                        <span> friday, july,17 </span>
+                    </div>
+                    <div class="bottom-content">
+                        <button><i class="fa-regular fa-lightbulb"></i></button>
+                        <button><i class="fa fa-camera"></i></button>
+                    </div>
+                </section>
+
+                <section class="screen-open">
+
+                    <div class="app-container">
+
+                        <div class="main-app">
+
+                            <div class="scroll-app">
+                                <button class="app">
+                                    <img src="img/setting.png">
+                                    <span> settings </span>
+                                </button>
+                                <button class="app">
+                                    <img src="img/calender.jpeg"> <span> clock </span>
+                                </button>
+                                <button class="app">
+                                    <img src="img/book.webp" alt=""> <span> book </span>
+                                </button>
+                                <button class="app">
+                                    <img src="img/clock.jpeg" alt=""> <span> clock </span>
+                                </button>
+                                <button class="app">
+                                    <img src="img/facetime.png" alt=""> <span> face me </span>
+                                </button>
+                                <button class="app">
+                                    <img src="img/photo.png" alt=""> <span> photo </span>
+                                </button>
+                                <button class="app">
+                                    <img src="img/calender.jpeg" alt=""> <span> calendar </span>
+                                </button>
+                                <button class="app">
+                                    <img src="img/book.webp" alt=""> <span> book </span>
+                                </button>
+                                <button class="app">
+                                    <img src="img/setting.png">
+                                    <span> settings </span>
+                                </button>
+                                <button class="app">
+                                    <img src="img/calender.jpeg"> <span> clock </span>
+                                </button>
+                                <button class="app">
+                                    <img src="img/book.webp" alt=""> <span> book </span>
+                                </button>
+                                <button class="app">
+                                    <img src="img/clock.jpeg" alt=""> <span> clock </span>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="bottom-app">
+                            <button class="app">
+                                <img src="img/message.png" alt="">
+                            </button>
+                            <button class="app">
+                                <img src="img/safari.png" alt="">
+                            </button>
+                            <button class="app">
+                                <img src="img/music.png" alt="">
+                            </button>
+                            <button class="app">
+                                <img src="img/telegram.webp" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
