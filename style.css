@@ -45,6 +45,15 @@
     border: solid 7px #000000dc;
     border-radius: 50px;
     overflow: auto;
+    animation: screen-animation .5s;
+}
+
+@keyframes screen-animation {
+    from {
+        filter: brightness(0) blur(5px);
+
+    }
+
 }
 
 .screen-content::-webkit-scrollbar {
